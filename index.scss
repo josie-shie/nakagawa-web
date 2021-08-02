@@ -46,6 +46,10 @@ $text-color-dk: #101111;
     line-height: 30px;
 }
 
+@mixin web-pedding{
+    padding:100px 15%;
+}
+
 
 body{
     background-color:$gary;
@@ -158,7 +162,7 @@ body{
 
 
 .main{
-    padding:100px 15%;
+    @include web-pedding;
     
 //--------- notice-cards -------------
 
@@ -222,33 +226,8 @@ body{
 
     //--------- shop-list -------------
 
-    .shop-list{
-        
-        h1{
-            @include text-lt;
-            margin-bottom: 40px;
-            letter-spacing: 5px;
-        }
-        p{
-            @include p-style;
-            margin-bottom: 40px;
-        }
-    }
-    .shop-list-box{
-        width: 100%;
-        height: 100px;
-        background-color: #f4f4ef;
-        border: 1px solid #e1e1ce;
-
-        p{
-            @include text-lt;
-            text-align:center;
-            line-height:100px;
-            letter-spacing: 5px;
-        }
-    }
-    
 }
+
 
 .introduce-img{
     padding-right: 15%;
@@ -293,5 +272,274 @@ body{
           }
     }
 
+}
+
+.shop{
+
+    @include web-pedding;
+    .shop-list{
+    
+        h1{
+            @include text-lt;
+            margin-bottom: 40px;
+            letter-spacing: 5px;
+        }
+        p{
+            @include p-style;
+            margin-bottom: 40px;
+        }
+    }
+    .shop-list-box{
+        width: 100%;
+        height: 100px;
+        background-color: #f4f4ef;
+        border: 1px solid #e1e1ce;
+    
+        p{
+            @include text-lt;
+            text-align:center;
+            line-height:100px;
+            letter-spacing: 5px;
+        }
+    }
+}
+
+.shop-list-img{
+    width: 90%;
+    height: 80vh;
+    display:flex;
+    justify-content:center;
+    margin: 100px auto;
+    position: relative;
+    background: {
+        image: url(./img/b-shop_img_cloud_03.png),url(./img/b-shop_img_cloud_04.png),url(./img/b-shop_img_cloud_04.png),url(./img/b-shop_img_bird.png),url(./img/b-shop_img_bg.png);
+        repeat  : no-repeat,no-repeat;
+        position:12% 32% ,80% 70%,20% 40%,80% 30%,80% 0 ;
+        size:20% ,20%,25%,10%,100%;
+        attachment:fixed;
+    }
+
+    img{
+        width: 60%;
+        margin:50px 0;
+    }
+
+    .rect-wrap{
+        position:absolute;
+        display:flex;
+        bottom: 0;
+        right: 10%;
+        .shop-ract{
+            width: 50px;
+            height: 200px;
+            margin-right: 10px;
+            background-color: #f4f4ef;
+            border: 1px solid #e1e1ce;
+            p{
+                @include text-md;
+                margin:50% auto;
+                text-align:center;
+                letter-spacing: 0.5rem;
+                writing-mode: vertical-rl;
+            }
+        }
+        .shop-ract:hover {
+            background-color: $tea-green;
+            p{
+                color: #f4f4ef;
+            }
+        }
+    }
+
+    .rect-wrap2{
+        position:absolute;
+        display:flex;
+        top: 0;
+        left: 10%;
+        .shop-ract2{
+            width: 50px;
+            height: 200px;
+            margin-right: 10px;
+            background-color: #f4f4ef;
+            border: 1px solid #e1e1ce;
+            p{
+                @include text-md;
+                margin:50% auto;
+                text-align:center;
+                letter-spacing: 0.5rem;
+                writing-mode: vertical-rl;
+            }
+        }
+        .shop-ract2:hover {
+            background-color: $tea-green;
+            p{
+                color: #f4f4ef;
+            }
+        }
+    }
+
+    
+}
+
+.work-shop{
+   margin-top: 400px;
+   padding:0 50px;
+   position: relative;
+
+   img{
+    width: 100%;
+    }
+
+    .work-shop-content{
+        display:flex;
+        margin: auto;
+        padding:0 35%;
+        flex-direction:column;
+        align-items:center;
+        
+        h1{
+            @include text-lt;
+            letter-spacing: 2px;
+            writing-mode: vertical-rl;
+            margin-bottom: 50px;
+        }
+
+        p{
+            @include p-style;
+        }
+    }
+    .work-shop-img1{
+        overflow: hidden;
+        width: 20%;
+        height:70vh;
+        position:absolute;
+        bottom:-30%;
+        left: 5%;
+    }
+    .work-shop-img2{
+        overflow: hidden;
+        width: 20%;
+        height:70vh;
+        position:absolute;
+        top: -30%;
+        right: 5%;
+
+    }
+}
+
+.info{
+    @include web-pedding;
+    margin-top: 200px;
+    display:flex;
+
+    h3{
+        @include text-lt;
+        width: 80%;
+    }
+    img {
+        width: 40%;
+        padding-bottom: 20px;
+    }
+    .info-box{
+        display:flex;
+        align-items: center;
+        padding: 20px 0;
+        border-top:1px solid #6161531b ;
+
+        strong{
+            width:20% ;
+            color:$tea-green;
+            font: {
+                size:0.5rem;
+                weight:900;
+            }
+        }
+        small{
+            @include p-style;
+        }
+        span{
+            font-weight: 900;
+        }
+    }
+}
+
+.near-by{
+    @include web-pedding;
+    margin-top: 50px;
+    display:flex;
+    border-bottom: 1px solid #6161531b;
+    
+    //?為何這裡用80%才會跟上面50%一樣距離
+    h3{
+        @include text-lt;
+        width: 80%;
+    }
+
+    img{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    h5{
+        @include text-md;
+    }
+    small{
+        font-weight: 200;
+        color: $tea-green;
+        letter-spacing: 0.2rem;
+    }
+
+    .web-btn{
+        margin-left: auto;
+        margin-top: 50px;
+    }
+    
+}
+.end{
+    @include web-pedding;
+
+    .end-box{
+        width: 100%;
+        height: 150px;
+        margin-bottom: 40px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        //@extend .shop-list-box;
+        background-color: #f4f4ef;
+        border: 1px solid #e1e1ce;
+        img{
+            width: 20%;
+            margin-right: 40px;
+        }
+        small{
+            font-weight: 500;
+            color: $tea-green;
+        }
+    }
+    .end-wrap{
+        display:flex;
+
+        .end-card{
+            width: calc(100% / 4);
+            display: flex;
+            flex-direction:column;
+            padding: 0 10px;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            
+            strong{
+                @include text-md;
+                font-size: 0.5rem;
+                margin: 10px 0;
+            }
+            small{
+                letter-spacing:0.2rem;
+                color: $tea-green;
+            }
+        }
+    }
 }
 
