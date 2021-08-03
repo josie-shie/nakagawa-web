@@ -345,6 +345,7 @@ body {
 
 .shop-list-img .rect-wrap .shop-ract:hover {
   background-color: #616153;
+  cursor: pointer;
 }
 
 .shop-list-img .rect-wrap .shop-ract:hover p {
